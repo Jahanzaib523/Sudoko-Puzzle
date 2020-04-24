@@ -1,0 +1,55 @@
+
+PUZZLE:
+
+read method read data from word.csv file and returns list of words
+
+miss method read data from pluzzle file and returns list of missing words
+
+findword takes size, finds data in list of words and return a word
+
+findlen takes one missing word e.g ##___## and find the continuous length of '_' 
+
+fill method takes missing words and words 
+	and for each missing word call findlen, findword and update the word in missing list until all blanks are removed
+	
+	
+Time Complexity:
+read method reads and append n data in list. O(n)
+miss method reads and append m data in list. O(m)
+findword finds word in O(n).
+findlen finds word in 0(l)
+fill method find fills (m) missing words
+	and for each missing word 
+		find word
+		find len
+	are called thus overall time complexity will be O(nm)
+	
+	
+SUDOKU:
+
+read method read data from word.csv file and returns list of words
+
+get method selects random board with a specific difficulty
+
+findcelltofill takes board and x,y location and returns location with zero element
+
+validMoves checks a specific row and a specific col that if a number is not present in both row and col 
+then find the top and left coordinates in the group of three to check number is already present or not
+
+solve_soduko start with index 0 and 0
+and for each number between 10 to 10 find a valid move 
+update board and call for solve_sudoku again
+
+if a valid solution exists than it will return true and updated board
+
+but if solution does not exist. it reverses and last move and go for next iteration  
+
+main method converts string to int and constructs board
+
+Time Complexity:
+read method reads and append n data in list. O(n)
+get random board O(n)
+findceltofill runs in worst case: O(n)
+valid moves runs in worst case: O(n)
+solve sudoku runs in O(n^n)
+Overall :O(n^n)
